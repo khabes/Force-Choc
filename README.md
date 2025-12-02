@@ -1,4 +1,6 @@
-
+C'est un problème classique en dynamique des structures impliquant la conversion d'énergie cinétique en énergie de déformation élastique.
+​L'arrêt brusque de l'objet de masse m en mouvement convertit son énergie cinétique en un travail de déformation du câble, ce qui génère une force d'impact (ou force de choc) beaucoup plus grande que son simple poids.
+​Pour fournir une formule d'approximation, nous utiliserons la loi de conservation de l'énergie et la loi de Hooke.
 
 
 ## 💾 Exportation de la Formule d'Impact
