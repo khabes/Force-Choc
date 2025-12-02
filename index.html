@@ -149,9 +149,9 @@
             const facteur_choc = (Fmax / P).toLocaleString('fr-FR', { maximumFractionDigits: 2 });
             
             resultatDiv.innerHTML = `
-                <p>✅ **Poids statique (P) :** ${P_text} N</p>
-                <p>✅ **Force d'Impact maximale ($F_{\text{max}}$) :** ${Fmax_text} N</p>
-                <p>📈 **Facteur de Choc** ($F_{\text{max}} / P$) : ${facteur_choc}</p>
+                <p>✅ Poids statique (P) : ${P_text} N</p>
+                <p>✅ Force d'Impact maximale (Fmax) : ${Fmax_text} N</p>
+                <p>📈 Facteur de Choc (Fmax / P) : ${facteur_choc}</p>
             `;
             resultatDiv.style.display = 'block';
         });
