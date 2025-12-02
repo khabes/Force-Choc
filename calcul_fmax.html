@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Force d'Impact Fmax</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .resultat {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #28a745;
+            border-radius: 4px;
+            background-color: #e2ffe8;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .note {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculateur de Force d'Impact $F_{\text{max}}$</h1>
+
+        <form id="calcForm">
+            <label for="m">Masse de l'objet, m (kg) :</label>
+            <input type="number" id="m" value="500" required>
+
+            <label for="v">Vitesse de descente, v (m/s) :</label>
+            <input type="number" id="v" value="0.5" required>
+
+            <label for="d_mm">Diamètre du câble, d (mm) :</label>
+            <input type="number" id="d_mm" value="12" required>
+            <p class="note">⚠️ L'application convertit les mm en mètres (m) automatiquement pour le calcul.</p>
+
+            <label for="L0">Longueur du câble, L₀ (m) :</label>
+            <input type="number" id="L0" value="100" required>
+
+            <label for="E">Module de Young de l'acier, E (Pa) :</label>
+            <input type="number" id="E" value="200000000000" required>
+
+            <label for="g">Gravité, g (m/s²) :</label>
+            <input type="number" id="g" value="9.81" required>
+
+            <button type="submit">Calculer $F_{\text{max}}$</button>
+        </form>
+
+        <div id="resultat" class="resultat" style="display: none;">
+            </div>
+    </div>
+
+    <script>
+        // Fonction JavaScript de Calcul
+        function calculerFmax(m, v, d_m, L0, E, g) {
+            // d_m est le diamètre en mètres
+            
+            // Étape 1 : Aire de la section transversale (A = π * d² / 4)
+            const A = Math.PI * Math.pow(d_m, 2) / 4;
+
+            // Étape 2 : Poids / Charge statique (P = m * g)
+            const P = m * g;
+            
+            // Étape 3 : Terme dynamique sous la racine
+            // Terme = (m*g)^2 + (m * v^2 * E * A / L0)
+            const termeSousRacine = Math.pow(P, 2) + (m * Math.pow(v, 2) * E * A / L0);
+
+            // Étape 4 : Force Fmax = P + sqrt(Terme)
+            const Fmax = P + Math.sqrt(termeSousRacine);
+
+            return { Fmax, P };
+        }
+
+        // Gestion de l'événement de soumission du formulaire
+        document.getElementById('calcForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            // Récupération des valeurs des champs
+            const m = parseFloat(document.getElementById('m').value);
+            const v = parseFloat(document.getElementById('v').value);
+            const d_mm = parseFloat(document.getElementById('d_mm').value);
+            const L0 = parseFloat(document.getElementById('L0').value);
+            const E = parseFloat(document.getElementById('E').value);
+            const g = parseFloat(document.getElementById('g').value);
+            
+            // Conversion du diamètre de mm en mètres (S.I. nécessaire pour le calcul)
+            const d_m = d_mm / 1000;
+
+            // Appel de la fonction de calcul
+            const { Fmax, P } = calculerFmax(m, v, d_m, L0, E, g);
+            
+            // Affichage des résultats
+            const resultatDiv = document.getElementById('resultat');
+            
+            const Fmax_text = Fmax.toLocaleString('fr-FR', { maximumFractionDigits: 2 });
+            const P_text = P.toLocaleString('fr-FR', { maximumFractionDigits: 2 });
+            const facteur_choc = (Fmax / P).toLocaleString('fr-FR', { maximumFractionDigits: 2 });
+            
+            resultatDiv.innerHTML = `
+                <p>✅ **Poids statique (P) :** ${P_text} N</p>
+                <p>✅ **Force d'Impact maximale ($F_{\text{max}}$) :** ${Fmax_text} N</p>
+                <p>📈 **Facteur de Choc** ($F_{\text{max}} / P$) : ${facteur_choc}</p>
+            `;
+            resultatDiv.style.display = 'block';
+        });
+
+    </script>
+
+</body>
+</html>
