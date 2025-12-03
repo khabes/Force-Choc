@@ -1,6 +1,6 @@
 const CACHE_NAME = 'fmax-calculator-v1';
 const urlsToCache = [
-  './calcul_fmax.html',
+  './index.html',
   './manifest.json',
   './icon-192x192.png',
   './icon-512x512.png',
