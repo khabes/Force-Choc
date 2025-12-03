@@ -1,4 +1,4 @@
-## ❗❗ Résultat généré par l'IA Gémini. La formule n'a pas encore été vérifiée à ce jour. ❗❗
+## ❗❗ Résultat généré par IA. La formule n'a pas encore été vérifiée à ce jour. ❗❗
 
 C'est un problème classique en dynamique des structures impliquant la conversion d'énergie cinétique en énergie de déformation élastique.
 
