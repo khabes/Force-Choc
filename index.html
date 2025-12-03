@@ -68,13 +68,20 @@
     <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <div class="container">
         <h1>Calculateur de Force d'Impact Fmax</h1>
-
+<p class="formula">
+    Où la force d'impact maximale $F_{\text{max}}$ est calculée par :
+    $$
+    F_{\text{max}} = m g + \sqrt{(m g)^2 + \frac{m v^2 E A}{L_0}}
+    $$
+    Avec $A = \pi \frac{d^2}{4}$ (l'aire de la section transversale).
+</p>
         <form id="calcForm">
             <label for="m">Masse de l'objet, m (kg) :</label>
             <input type="number" id="m" value="500" required>
