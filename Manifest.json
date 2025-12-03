@@ -1,7 +1,7 @@
 {
   "name": "Calcul Fmax Impact",
   "short_name": "Fmax",
-  "start_url": "./calcul_fmax.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
