@@ -1,3 +1,5 @@
+## ❗❗ Résultat généré par l'IA Gémini. La formule n'a pas encore été vérifiée à ce jour. ❗❗
+
 C'est un problème classique en dynamique des structures impliquant la conversion d'énergie cinétique en énergie de déformation élastique.
 
 ​L'arrêt brusque de l'objet de masse m en mouvement convertit son énergie cinétique en un travail de déformation du câble, ce qui génère une force d'impact (ou force de choc) beaucoup plus grande que son simple poids.
