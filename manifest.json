@@ -8,12 +8,12 @@
   "description": "Calculateur de force d'impact maximale sur un câble d'acier.",
   "icons": [
     {
-      "src": "icon-192x192.png",
+      "src": "icon/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512x512.png",
+      "src": "icon/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
