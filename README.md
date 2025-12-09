@@ -44,3 +44,6 @@ Puis :
 $$
 F_{\text{max}} = (m \times g) + \text{SQRT}((m \times g)^2 + ((m \times v^2 \times E \times A) / L_0))
 $$
+
+source verification :
+https://www.alpiniste.fr/facteur-de-chute-calculateur/
