@@ -51,9 +51,9 @@ document.getElementById('calcForm').addEventListener('submit', function(event) {
     const facteur_choc = (Fmax / P).toLocaleString('fr-FR', { maximumFractionDigits: 2 });
     
     resultatDiv.innerHTML = `
-        <p>✅ Poids statique (P) : ${P_text} N</p>
-        <p>✅ Force d'Impact maximale (F<sub>max</sub>) : ${Fmax_text} N</p>
-        <p>📈 Facteur de Choc (F<sub>max</sub> / P) : ${facteur_choc}</p>
+        <p><img src="Weight.png" alt="Poids statique" height="24" width="24"> Poids statique (P) : ${P_text} N</p>
+        <p><img src="icon-192x192.png" alt="Force d'Impact maximale" height="24" width="24"> Force d'Impact maximale (F<sub>max</sub>) : ${Fmax_text} N</p>
+        <p><img src="Calc.png" alt="Facteur de Choc" height="24" width="24"> Facteur de Choc (F<sub>max</sub> / P) : ${facteur_choc}</p>
     `;
     resultatDiv.style.display = 'block';
 });
