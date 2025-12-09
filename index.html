@@ -43,8 +43,14 @@
             <label for="m">Masse de l'objet, m (kg) :</label>
             <input type="number" id="m" value="500" step="any" required>
 
-            <label for="v">Vitesse de descente, v (m/s) :</label>
-            <input type="number" id="v" value="0.06" step="any" required>
+            <label for="v">Vitesse de descente, v :</label>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <input type="number" id="v" value="3.6" step="any" required>
+                <select id="v_unit">
+                    <option value="m/s">m/s</option>
+                    <option value="m/min" selected>m/min</option>
+                </select>
+            </div>
 
             <label for="d_mm">Diamètre du câble, d (mm) :</label>
             <input type="number" id="d_mm" value="6" step="any" required>

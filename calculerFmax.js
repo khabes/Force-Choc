@@ -24,11 +24,18 @@ document.getElementById('calcForm').addEventListener('submit', function(event) {
 
     // Récupération des valeurs des champs
     const m = parseFloat(document.getElementById('m').value);
-    const v = parseFloat(document.getElementById('v').value);
+    const v_input = parseFloat(document.getElementById('v').value);
+    const v_unit = document.getElementById('v_unit').value;
     const d_mm = parseFloat(document.getElementById('d_mm').value);
     const L0 = parseFloat(document.getElementById('L0').value);
     const E = parseFloat(document.getElementById('E').value);
     const g = parseFloat(document.getElementById('g').value);
+    
+    // Conversion de la vitesse en m/s si nécessaire
+    let v = v_input;
+    if (v_unit === 'm/min') {
+        v = v_input / 60; // Conversion m/min en m/s
+    }
     
     // Conversion du diamètre de mm en mètres (S.I. nécessaire pour le calcul)
     const d_m = d_mm / 1000;
