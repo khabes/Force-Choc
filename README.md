@@ -1,4 +1,6 @@
-## ❗❗ Résultat généré par IA. La formule n'est pas vérifiée. ❗❗
+# ❗❗ Résultat généré par IA. ❗❗
+
+## La formule n'est pas vérifiée.
 
 C'est un problème classique en dynamique des structures impliquant la conversion d'énergie cinétique en énergie de déformation élastique.
 
@@ -9,7 +11,6 @@ C'est un problème classique en dynamique des structures impliquant la conversio
 ---
 
 ## 💾 Exportation de la Formule d'Impact
-
 
 ### **Formule d'Approximation de la Force d'Impact $F_{\text{max}}$**
 
@@ -31,8 +32,6 @@ $$
 | $g$ | Accélération de la gravité | $\text{m/s}^2$ | $\approx 9,81 \text{ m/s}^2$ |
 | $E$ | Module de **Young** (Acier) | $\text{Pa}$ ($\text{N/m}^2$) | $\approx 200 \times 10^9 \text{ Pa}$ |
 | $A$ | **Aire** de la section du câble | $\text{m}^2$ | $A = \frac{\pi d^2}{4}$ |
-
-
 
 Si vous entrez vos valeurs dans un tableur, vous pouvez utiliser la formule suivante (en utilisant $3.14159$ pour $\pi$ et en vous assurant que $d$ est en mètres) :
 
