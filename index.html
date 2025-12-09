@@ -12,35 +12,43 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-
     <div class="container">
-        <p align="center"><img src="icon-192x192.png" alt="Force d'Impact" style="width:100px;height:100px;">
-</a></p>
-        <hr />
+        <p align="center">
+            <img src="icon-192x192.png" alt="Force d'Impact" style="width:100px;height:100px;">
+        </p>
+
+        <hr>
+
         <h1>Calculateur de Force d'Impact F<sub>max</sub></h1>
-        <p align="center">Résultat généré par IA.<br />
+
+        <p align="center">Résultat généré par IA.<br>
             ❗❗La formule n'est pas vérifiée.❗❗</p>
-        <hr />
-<p class="formula">
-    Où la force d'impact maximale F<sub>max</sub> est calculée par :
-    $$
-    F_{\text{max}} = m g + \sqrt{(m g)^2 + \frac{m v^2 E A}{L_0}}
-    $$
-    Avec l'aire de la section transversale:
-    $$
-    A = \pi \frac{d^2}{4}
-    $$
-</p>
-        <hr />
+
+        <hr>
+
+        <p class="formula">
+            Où la force d'impact maximale F<sub>max</sub> est calculée par :
+            $$
+            F_{\text{max}} = m g + \sqrt{(m g)^2 + \frac{m v^2 E A}{L_0}}
+            $$
+            Avec l'aire de la section transversale:
+            $$
+            A = \pi \frac{d^2}{4}
+            $$
+        </p>
+
+        <hr>
+
         <form id="calcForm">
             <label for="m">Masse de l'objet, m (kg) :</label>
-            <input type="number" id="m" value="500"  step="any" required>
+            <input type="number" id="m" value="500" step="any" required>
 
             <label for="v">Vitesse de descente, v (m/s) :</label>
             <input type="number" id="v" value="0.06" step="any" required>
 
             <label for="d_mm">Diamètre du câble, d (mm) :</label>
             <input type="number" id="d_mm" value="6" step="any" required>
+
             <p class="note">⚠️ L'application convertit les mm en mètres (m) automatiquement pour le calcul.</p>
 
             <label for="L0">Longueur du câble, L₀ (m) :</label>
@@ -55,12 +63,15 @@
             <button type="submit">Calculer F<sub>max</sub></button>
         </form>
 
-        <div id="resultat" class="resultat" style="display: none;">
-            </div>
-        <hr />
-            <p align="center"><a href="https://github.com/khabes/Force-Choc">
-  <img src="github-mark.png" alt="Github" style="width:56px;height:56px;">
-</a></p>
+        <div id="resultat" class="resultat" style="display: none;"></div>
+
+        <hr>
+
+        <p align="center">
+            <a href="https://github.com/khabes/Force-Choc">
+                <img src="github-mark.png" alt="Github" style="width:56px;height:56px;">
+            </a>
+        </p>
     </div>
 
     <script>
