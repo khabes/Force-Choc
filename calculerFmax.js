@@ -18,6 +18,13 @@ function calculerFmax(m, v, d_m, L0, E, g) {
     return { Fmax, P };
 }
 
+// Conversion des unités de vitesse et de diamètre pour le calcul
+function convertirUnites(v_input, v_unit, d_mm) {
+    const v = v_unit === 'm/min' ? v_input / 60 : v_input;
+    const d_m = d_mm / 1000;
+    return { v, d_m };
+}
+
 // Gestion de l'événement de soumission du formulaire
 document.getElementById('calcForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Empêche le rechargement de la page
@@ -31,14 +38,8 @@ document.getElementById('calcForm').addEventListener('submit', function(event) {
     const E = parseFloat(document.getElementById('E').value);
     const g = parseFloat(document.getElementById('g').value);
     
-    // Conversion de la vitesse en m/s si nécessaire
-    let v = v_input;
-    if (v_unit === 'm/min') {
-        v = v_input / 60; // Conversion m/min en m/s
-    }
-    
-    // Conversion du diamètre de mm en mètres (S.I. nécessaire pour le calcul)
-    const d_m = d_mm / 1000;
+    // Conversion des unités pour le calcul
+    const { v, d_m } = convertirUnites(v_input, v_unit, d_mm);
 
     // Appel de la fonction de calcul
     const { Fmax, P } = calculerFmax(m, v, d_m, L0, E, g);
